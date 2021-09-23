@@ -517,13 +517,13 @@ namespace PdfSharpCore.Drawing  // #??? aufräumen
 #if CORE
             TargetContext = XGraphicTargetContext.CORE;
 #endif
-#if CORE || NET5_0
-            _drawGraphics = false;
-            if (form.Owner != null)
-                _renderer = new XGraphicsPdfRenderer(form, this);
-            _pageSize = form.Size;
-            Initialize();
-#endif
+
+        _drawGraphics = false;
+        if (form.Owner != null)
+            _renderer = new XGraphicsPdfRenderer(form, this);
+        _pageSize = form.Size;
+        Initialize();
+
 #if GDI && !WPF
             try
             {
